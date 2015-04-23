@@ -72,25 +72,28 @@
 
       this.shadowRoot = this.createShadowRoot();
       this.shadowRoot.appendChild(clone);
-
       this.element = this.shadowRoot.querySelector('.favorite-star-character');
-      console.log(this.shadowRoot.querySelector('.favorite-star-character'));
 
       this.boundOnClick = this.onClick.bind(this);
       this.boundOnMouseover = this.onMouseover.bind(this);
       this.boundOnMouseout = this.onMouseout.bind(this);
+
+      if (this.hasAttribute('active')) {
+        this.element.setAttribute('active', '');
+      }
     };
 
-    proto.onClick = function() {
-      var el = this.element;
-
-      if (el.hasAttribute('active')) {
-        el.removeAttribute('active');
-        el.removeAttribute('hover');
+    proto.toggle = function() {
+      if (this.hasAttribute('active')) {
+        this.removeAttribute('active');
       }
       else {
-        el.setAttribute('active', '');
+        this.setAttribute('active', '');
       }
+    }
+
+    proto.onClick = function() {
+      this.toggle();
     }
 
     proto.onMouseover = function() {
@@ -108,7 +111,6 @@
     }
 
     proto.attachedCallback = function() {
-      console.log("attached");
       var el = this.element;
 
       el.addEventListener('click', this.boundOnClick);
@@ -123,6 +125,20 @@
       el.removeEventListener('click', this.boundOnClick);
       el.removeEventListener('mouseout', this.boundOnMouseout);
       el.removeEventListener('mouseover', this.boundOnMouseover);
+    }
+
+    proto.attributeChangedCallback = function(attr) {
+      if (attr === 'active') {
+        var el = this.element;
+
+        if (this.hasAttribute('active')) {
+          el.setAttribute('active', '');
+        }
+        else {
+          el.removeAttribute('active');
+          el.removeAttribute('hover');
+        }
+      }
     }
 
     return document.registerElement('favorite-star', {prototype: proto});
