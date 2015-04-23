@@ -6,6 +6,9 @@
     "Andreas Argelius <andreas@argeli.us>"
   ],
   "description": "Web Component element that displays a \"favorite star\".",
+  "keywords": [
+    "web-components"
+  ],
   "main": "favorite-star.html",
   "license": "MIT",
   "ignore": [

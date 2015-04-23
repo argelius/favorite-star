@@ -2,6 +2,9 @@
   "name": "favorite-star",
   "version": "0.1.0",
   "description": "Web Component element that displays a \"favorite star\".",
+  "keywords": [
+    "web-components"
+  ],
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
