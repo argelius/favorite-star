@@ -1,6 +1,6 @@
 {
   "name": "favorite-star",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Web Component element that displays a \"favorite star\".",
   "keywords": [
     "web-components"
