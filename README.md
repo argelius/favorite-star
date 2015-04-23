@@ -2,6 +2,8 @@
 
 Simple Web Component that displays a clickable "favorite star". The star has a neat animation when it's activated.
 
+[Check it out!](http://argelius.github.io/favorite-star/)
+
 ## Usage
 
 Just put it in your page:
