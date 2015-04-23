@@ -1,6 +1,6 @@
 {
   "name": "favorite-star",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/argelius/favorite-star",
   "authors": [
     "Andreas Argelius <andreas@argeli.us>"
@@ -17,5 +17,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "webcomponentsjs": "~0.6.1"
+  }
 }
