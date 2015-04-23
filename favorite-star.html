@@ -72,9 +72,7 @@
 
       this.shadowRoot = this.createShadowRoot();
       this.shadowRoot.appendChild(clone);
-
       this.element = this.shadowRoot.querySelector('.favorite-star-character');
-      console.log(this.shadowRoot.querySelector('.favorite-star-character'));
 
       this.boundOnClick = this.onClick.bind(this);
       this.boundOnMouseover = this.onMouseover.bind(this);
@@ -108,7 +106,6 @@
     }
 
     proto.attachedCallback = function() {
-      console.log("attached");
       var el = this.element;
 
       el.addEventListener('click', this.boundOnClick);
