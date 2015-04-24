@@ -8,6 +8,12 @@
       transform: scale3d(1.0, 1.0, 1.0);
       -webkit-transform: scale3d(1.0, 1.0, 1.0);
       -moz-transform: scale3d(1.0, 1.0, 1.0);
+
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
 
     @-webkit-keyframes favorite-star-bounce {
@@ -119,7 +125,6 @@
     }
 
     proto.detachedCallback = function() {
-      console.log("detached");
       var el = this.element;
 
       el.removeEventListener('click', this.boundOnClick);
